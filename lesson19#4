@@ -1,3 +1,4 @@
 for i : 1 .. 15
-    put i, " " ..
+    colour (i)
+    put i
 end for
