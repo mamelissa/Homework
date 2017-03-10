@@ -1,0 +1,6 @@
+put "The squares of the first 20 positive even integers."
+put "   Number     Square"
+for count : 2 .. 40 by 2
+    put count : 7 ..
+    put count ** 2 : 11
+end for
