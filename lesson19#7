@@ -1,0 +1,5 @@
+var star : string := "*"
+for i : 1 .. 21
+    put star
+    star += "*"
+end for
