@@ -1,0 +1,14 @@
+var number1 : int := 0
+var total : real := 0
+loop
+    put "Put the weight to the package, enter 0 to exit the program."
+    get weight
+    exit when weight = 0
+    if weight > 0 then
+        total += weight
+        number1 += 1
+    else
+        put "Error!"
+    end if
+end loop
+put "The average of these packages are ", total / number1, "."
