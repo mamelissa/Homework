@@ -1,0 +1,23 @@
+% #1
+var word1 : string
+var total1 : int := 0
+for i : 1 .. 10
+    put "Please enter a word."
+    get word1
+    total1 += length (word1)
+end for
+put "The average length of these 10 words are ", total1 / 10, "."
+
+
+% #2
+var word : string
+var total : int := 0
+var number_of_words : int := 0
+for i : 1 .. 10
+    put "Please enter a word, enter done when finished."
+    get word
+    exit when word = "done"
+    total += length (word)
+    number_of_words += 1
+end for
+put "The average length of these ", number_of_words, " words are ", total / number_of_words, "."

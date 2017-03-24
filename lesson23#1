@@ -1,8 +1,0 @@
-var word1 : string
-var total1 : int := 0
-for i : 1 .. 10
-    put "Please enter a word."
-    get word1
-    total1 += length (word1)
-end for
-put "The average length of these 10 words are ", total1 / 10, "."
