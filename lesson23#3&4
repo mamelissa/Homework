@@ -1,0 +1,25 @@
+% #3
+var input : string
+var input_as_int : int
+put "Enter an integer in word form."
+get input
+if strintok (input) then
+    input_as_int := strint (input)
+    put "The integer you entered was ", input_as_int, "."
+else
+    put "You did not enter an valid integer."
+end if
+
+
+
+% #4
+var input1 : string
+var input_as_int1 : int
+loop
+    put "Enter an integer in word form."
+    get input1
+    exit when strintok (input1)
+    put "You did not enter an valid integer, try again!"
+end loop
+input_as_int1 := strint (input1)
+put "The integer you entered was ", input_as_int1, "."
