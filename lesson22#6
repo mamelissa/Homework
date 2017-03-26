@@ -1,0 +1,19 @@
+var speedlimit : real
+var carspeed : real
+put "Enter 0 when you are finished using the program."
+loop
+    put "Please enter the speed limit.(km/h)"
+    get speedlimit
+    exit when speedlimit = 0
+    put "Please enter the recorded speed of the car."
+    get carspeed
+    if carspeed <= speedlimit then
+        put "Congratulations, you are within the speed limit!"
+    elsif speedlimit - carspeed < 0 and speedlimit - carspeed >= -20 then
+        put "You are speeding and your fine is $100."
+    elsif speedlimit - carspeed < -20 and speedlimit - carspeed >= -30 then
+        put "You are speeding and your fine is $200."
+    elsif speedlimit - carspeed < -31 then
+        put "You are speeding and your fine is $500."
+    end if
+end loop
