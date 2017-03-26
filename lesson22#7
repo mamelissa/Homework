@@ -1,0 +1,22 @@
+var weight1 : real
+var weight2 : real
+var weight3 : real
+put "Please enter the weight of the first bowl."
+get weight1
+put "Please enter the weight of the second bowl."
+get weight2
+put "Please enter the weight of the third bowl."
+get weight3
+if weight1 > weight2 and weight1 < weight3 then
+    put weight1, " is mama bear's bowl."
+elsif weight1 > weight3 and weight1 < weight2 then
+    put weight1, " is mama bear's bowl."
+elsif weight2 > weight1 and weight2 < weight3 then
+    put weight2, " is mama bear's bowl."
+elsif weight2 > weight3 and weight2 < weight1 then
+    put weight2, " is mama bear's bowl."
+elsif weight3 > weight2 and weight3 < weight1 then
+    put weight3, " is mama bear's bowl."
+elsif weight3 > weight1 and weight3 < weight2 then
+    put weight3, " is mama bear's bowl."
+end if
