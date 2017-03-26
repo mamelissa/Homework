@@ -1,0 +1,13 @@
+var integer : real
+var numberm : int := 0
+loop
+    put "Please enter an integer."
+    get integer
+    if integer mod 1 not= 0 then
+        put "Try again!"
+    else
+        for i : 1 .. 10
+            put integer, " * ", i : 2, " = ", integer * i
+        end for
+    end if
+end loop
