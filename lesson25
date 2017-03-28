@@ -1,0 +1,51 @@
+%5
+
+var new_word : string := ""
+var word : string
+put "Please enter a word. " ..
+get word
+for i : 1..length(word)
+    if index("aeiouAEIOU" , word(i)) not=0 then
+	new_word+="9"
+    else
+	new_word+=word(i)
+    end if
+end for
+put "The new word with 9 replacing the vowels is " , new_word, "."
+
+
+%4
+
+var word2 : string
+put "Please enter a word: " ..
+get word2
+put word2 (length (word2) div 2 + 1 .. *) ..
+put word2 (1 .. length (word2) div 2
+
+%2
+
+var word4 : string
+var newword4 : string := ""
+put "Please enter a word: " ..
+get word4
+for i : 1 .. length (word4)
+    if index ("aeiouAEIOU", word4 (i)) not= 0 then
+        newword4 += word4 (i)
+    else
+        newword4 += "9"
+    end if
+end for
+put "The new word is ", newword4, "."
+
+%1
+
+var new_word : string := ""
+var word : string
+put "Please enter a word. " ..
+get word
+for i : 1..length(word)
+    if index("dD" , word(i))=0 then
+	new_word+=word(i)
+    end if
+end for
+put "The new word without any letter Ds is " , new_word , "."
