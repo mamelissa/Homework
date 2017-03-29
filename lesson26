@@ -1,0 +1,108 @@
+%11
+
+var word4 : string
+var number4 : int
+var new_word4 : string := ""
+put "Please enter a word. " ..
+get word4
+for i : 1 .. length (word4)
+    if i mod 2 not= 0 then
+        if word4 (i) >= "A" and word4 (i) <= "Z" then
+            new_word4 += word4 (i)
+        else
+            number4 := ord (word4 (i)) - ord ("a") + ord ("A")
+            new_word4 += chr (number4)
+        end if
+    else
+        if word4 (i) >= "A" and word4 (i) <= "Z" then
+            number4 := ord (word4 (i)) - ord ("A") + ord ("a")
+            new_word4 += chr (number4)
+        else
+            new_word4 += word4 (i)
+        end if
+    end if
+end for
+
+put "The new word is ", new_word4, "."
+
+
+
+%10
+
+
+var word3 : string
+var number3 : int
+var new_word3 : string := ""
+put "Please enter a word. " ..
+get word3
+for i : 1 .. length (word3)
+    if word3 (i) >= "a" and word3 (i) <= "z" then
+        number3 := ord (word3 (i)) - ord ("a") + ord ("A")
+        new_word3 += chr (number3)
+    elsif word3 (i) >= "A" and word3 (i) <= "Z" then
+        number3 := ord (word3 (i)) - ord ("A") + ord ("a")
+        new_word3 += chr (number3)
+    end if
+end for
+put new_word3
+
+
+
+%9
+
+
+var word2 : string
+var number2 : int
+var new_word2 : string := ""
+put "Please enter a word. " ..
+get word2
+for i : 1 .. length (word2)
+    if word2 (i) >= "a" and word2 (i) <= "z" and index ("aeiAEI", word2 (i)) not= 0 then
+        number2 := ord (word2 (i)) + 4
+        new_word2 += chr (number2)
+    elsif word2 (i) >= "a" and word2 (i) <= "z" and index ("ouOU", word2 (i)) not= 0 then
+        number2 := ord (word2 (i)) + 6
+        new_word2 += chr (number2)
+    else
+        new_word2 += word2 (i)
+    end if
+end for
+put "Every vowel in this word exchanged with the vowel that follows results in the word: ", new_word2, "."
+
+
+%8
+
+
+var word1 : string
+var number1 : int
+var new_word1 : string := ""
+put "Please enter a word. " ..
+get word1
+for i : 1 .. length (word1)
+    if word1 (i) >= "a" and word1 (i) <= "z" and index ("aeiouAEIOU", word1 (i)) = 0 then
+        number1 := ord (word1 (i)) - ord ("a") + ord ("A")
+        new_word1 += chr (number1)
+    else
+        new_word1 += word1 (i)
+    end if
+end for
+put "The consonants exchanged with its capital letters in this word are: ", new_word1, "."
+
+
+%7
+
+
+var word : string
+var number : int
+var new_word : string := ""
+put "Please enter a word. " ..
+get word
+for i : 1 .. length (word)
+    if word (i) >= "a" and word (i) <= "z" and index ("aeiouAEIOU", word (i)) not= 0 then
+        number := ord (word (i)) - ord ("a") + ord ("A")
+        new_word += chr (number)
+    else
+        new_word += word (i)
+    end if
+end for
+put "The vowels exchanged with its capital letters in this word are: ", new_word, "."
