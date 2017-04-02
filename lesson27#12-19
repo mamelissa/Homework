@@ -1,0 +1,143 @@
+%19
+
+var word7 : string
+var number7 : int
+var new_word7 : string := ""
+put "Please enter a word: " ..
+get word7
+for count : 1 .. 40
+    put " " ..
+end for
+for m : 1 .. length (word7)
+    put word7 (m) ..
+    put " " ..
+end for
+for count : 1 .. 40
+    put " " ..
+end for
+
+
+put ""
+
+
+var word6 : string
+var number6 : int
+var new_word6 : string := ""
+put "Please enter a word: " ..
+get word6
+for count : 1 .. 40
+    put " " ..
+end for
+put word6 ..
+for count : 1 .. 40
+    put " " ..
+end for
+
+
+put ""
+
+
+var word5 : string
+var number5 : int
+var new_word5 : string := ""
+put "Please enter a word: " ..
+get word5
+for i : 1 .. length (word5)
+    new_word5 += word5 (i)
+    for decreasing count : length (word5) - i .. 1
+        new_word5 += chr (32)
+    end for
+end for
+put new_word5
+
+
+
+put ""
+
+
+var word4 : string
+var number4 : int
+var new_word4 : string := ""
+put "Please enter a word: "
+get word4
+for i : 1 .. length (word4)
+    new_word4 += word4 (i)
+    for count : 1 .. i
+        new_word4 += chr (32)
+    end for
+end for
+put new_word4
+
+
+
+put ""
+
+
+var word3 : string
+var number3 : int
+var new_word3 : string := ""
+put "Please enter a word: "
+get word3
+for i : 1 .. length (word3)
+    new_word3 += word3 (i)
+    put new_word3 ..
+    put " "
+end for
+
+
+put ""
+
+
+var word2 : string
+var number2 : int
+var new_word2 : string := ""
+put "Please enter a word: " ..
+get word2
+for i : 1 .. length (word2)
+    if i > length (word2) div 2 then
+        number2 := ord (word2 (i)) - ord ("a") + ord ("A")
+        new_word2 += chr (number2)
+    else
+        new_word2 += word2 (i)
+    end if
+end for
+put "The word is ", new_word2, "."
+
+
+put ""
+
+
+var word1 : string
+var number1 : int
+var new_word1 : string := ""
+put "Please enter a word: " ..
+get word1
+for i : 1 .. length (word1)
+    if i <= length (word1) div 2 then
+        number1 := ord (word1 (i)) - ord ("a") + ord ("A")
+        new_word1 += chr (number1)
+    else
+        new_word1 += word1 (i)
+    end if
+end for
+put "The word is ", new_word1, "."
+
+
+
+put ""
+
+
+var word : string
+var number : int
+var new_word : string := ""
+put "Please enter a word." ..
+get word
+for i : 1 .. length (word)
+    if i mod 2 = 0 then
+        number := ord (word (i)) - ord ("a") + ord ("A")
+        new_word += chr (number)
+    else
+        new_word += word (i)
+    end if
+end for
+put "The new word is ", new_word, "."
