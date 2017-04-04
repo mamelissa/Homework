@@ -1,0 +1,171 @@
+%1
+var word : string
+var number : int
+for count : 1 .. 5
+    randint (number, 2, 8)
+    put "Please enter a word with ", number, " letters."
+    get word
+end for
+put "Thanks, bye!"
+
+
+put ""
+
+%1a
+var word1 : string
+var number1 : int
+for count : 1 .. 5
+    randint (number, 2, 8)
+    put "Please enter a word with ", number, " letters."
+    get word
+    if length (word) = number then
+        put "Thanks, bye!"
+    else
+        put "You did not enter the correct number of letters required."
+        exit when length (word) not= number
+    end if
+end for
+
+put ""
+
+%1b
+var word2 : string
+var number2 : int
+loop
+    randint (number, 2, 8)
+    put "Please enter a word with ", number, " letters."
+    get word
+    if length (word) = number then
+        put "Thanks, bye!"
+        exit when length (word) = number
+    else
+        put "You did not enter the correct number of letters required. Try again."
+    end if
+end loop
+
+put ""
+
+%2
+var number3 : int
+for i : 1 .. 10
+    randint (number3, 50, 60)
+    put number, " " ..
+end for
+
+put ""
+
+%3
+var die : int
+for i : 1 .. 20
+    randint (die, 1, 6)
+    put die, " " ..
+end for
+
+put ""
+
+%3a
+var die : int
+var one : int := 0
+var two : int := 0
+var three : int := 0
+var four : int := 0
+var five : int := 0
+var six : int := 0
+for i : 1 .. 20
+    randint (die, 1, 6)
+    case die of
+        label 1 :
+            one += 1
+        label 2 :
+            two += 1
+        label 3 :
+            three += 1
+        label 4 :
+            four += 1
+        label 5 :
+            five += 1
+        label 6 :
+            six += 1
+    end case
+end for
+put "1 was rolled ", one, " time(s)"
+put "2 was rolled ", two, " times(s)"
+put "3 was rolled ", three, " times(s)"
+put "4 was rolled ", four, " times(s)"
+put "5 was rolled ", five, " times(s)"
+put "6 was rolled ", six, " times(s)"
+
+put ""
+
+%3b
+var die1 : int
+var most_common1 : int := 0
+var one1 : int := 0
+var two1 : int := 0
+var three1 : int := 0
+var four1 : int := 0
+var five1 : int := 0
+var six1 : int := 0
+for j : 1 .. 20
+    randint (die1, 1, 6)
+    case die1 of
+        label 1 :
+            one1 += 1
+            if one1 > most_common1 then
+                most_common1 := 1
+            end if
+        label 2 :
+            two1 += 1
+            if two1 > most_common1 then
+                most_common1 := 2
+            end if
+        label 3 :
+            three1 += 1
+            if three1 > most_common1 then
+                most_common1 := 3
+            end if
+        label 4 :
+            four1 += 1
+            if four1 > most_common1 then
+                most_common1 := 4
+            end if
+        label 5 :
+            five1 += 1
+            if five1 > most_common1 then
+                most_common1 := 5
+            end if
+        label 6 :
+            six1 += 1
+            if six1 > most_common1 then
+                most_common1 := 6
+            end if
+    end case
+end for
+put "The most common (or one of the most common) rolled number was ", most_common1, "."
+
+put ""
+
+%4
+var number : int
+var guess : int
+var a : int := 0
+randint (number, 1, 100)
+put "Guess a number!"
+loop
+    put "number: " ..
+    get guess
+    exit when guess = number
+    if guess > number then
+        put "Lower"
+    else
+        put "Higher"
+    end if
+    a += 1
+end loop
+if a = 0 then
+    put "No wayyyyyyyyyyy?!!!"
+elsif a >= 1 and a <= 7 then
+    put "You got it!"
+elsif a > 7 then
+    put "Dude you took a lot of tries!"
+end if
