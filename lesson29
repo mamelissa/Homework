@@ -1,0 +1,154 @@
+%1
+var number : int
+var number1, number2, number3 := 0
+var smallest, middle, biggest := 0
+randint (number, 1, 200)
+randint (number2, 1, 200)
+randint (number3, 1, 200)
+if number > number2 and number > number3 then
+    biggest := number
+elsif number < number2 and number < number3 then
+    smallest := number
+else
+    middle := number
+end if
+if number2 > number1 and number2 > number3 then
+    biggest := number2
+elsif number2 < number1 and number2 < number3 then
+    smallest := number2
+else
+    middle := number2
+end if
+if number3 > number1 and number3 > number2 then
+    biggest := number3
+elsif number3 < number1 and number3 < number2 then
+    smallest := number3
+else
+    middle := number3
+end if
+put "The numbers ordered from smallest to biggest is: ", smallest, " ", middle, " ", biggest, "."
+
+
+%1a
+var number, number2, number3 : real := 0
+var smallest, middle, biggest : real := 0
+rand (number)
+number *= 50
+number += 50
+rand (number2)
+number2 *= 50
+number2 += 50
+rand (number3)
+number3 *= 50
+number3 += 50
+if number > number2 and number > number3 then
+    biggest := number
+elsif number < number2 and number < number3 then
+    smallest := number
+else
+    middle := number
+end if
+if number2 > number and number2 > number3 then
+    biggest := number2
+elsif number2 < number and number2 < number3 then
+    smallest := number2
+else
+    middle := number2
+end if
+if number3 > number and number3 > number2 then
+    biggest := number3
+elsif number3 < number and number3 < number2 then
+    smallest := number3
+else
+    middle := number3
+end if
+put "The numbers ordered from smallest to biggest is: ", smallest : 0 : 2, ", ", middle : 0 : 2, ", ", biggest : 0 : 2, "."
+
+
+%2
+var number4 : int
+var before : int := 0
+loop
+    randint (number4, 1, 100)
+    put number4, " " ..
+    exit when number4 > 90 and number4 < 100
+    before += 1
+end loop
+put ""
+put "We got ", before, " numbers before we got one in the 90s."
+
+%2a (exit when a number that ends in 5 is met)
+var number5 : int
+var before1 : int := 0
+loop
+    randint (number5, 1, 100)
+    put number5, " " ..
+    exit when number5 mod 5 = 0
+    before1 += 1
+end loop
+put ""
+put "We got ", before1, " numbers before we got one that ends in 5."
+
+%3
+var dice1 : int
+var dice2 : int
+var doubles : int := 0
+put "Dice 1  Dice 2"
+for i : 1 .. 30
+    randint (dice1, 1, 6)
+    put dice1 :4 ..
+    randint (dice2, 1, 6)
+    put dice2 : 8
+    if dice1 = dice2 then
+        doubles += 1
+    end if
+end for
+put "doubles were rolled ", doubles, " times."
+
+%3a
+var dice3 : int
+var dice4 : int
+var odd : int := 0
+put "Dice 1  Dice 2"
+for j : 1 .. 30
+    randint (dice3, 1, 6)
+    put dice3 :4 ..
+    randint (dice4, 1, 6)
+    put dice4 : 8
+    if (dice3 + dice4) mod 2 not = 0 then
+    odd += 1
+    end if
+end for
+put "The sum of the dice were odd ", odd, " times."
+
+%4
+var dice5: int
+var dice6: int
+var before_seven: int := 0
+put "Dice 1  Dice 2"
+loop
+randint (dice5,1,6)
+  put dice5 : 4 ..
+randint (dice6,1,6)
+  put dice6 : 8
+exit when dice5 + dice6 = 7
+before_seven += 1
+end loop
+put ""
+put "We had to roll the dice ", before_seven, " times before we got a 7."
+
+%4a
+var dice7: int
+var dice8: int
+var snake_eyes: int := 0
+put "Dice 1  Dice 2"
+loop
+randint (dice7,1,6)
+    put dice7 : 4 ..
+randint (dice8,1,6)
+    put dice8 : 8 
+exit when dice7 = 1 and dice8 = 1
+snake_eyes += 1
+end loop
+put ""
+put "We had to roll the dice ", snake_eyes, " times before we got snake eyes (pair of ones)."
