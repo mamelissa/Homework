@@ -1,0 +1,289 @@
+%3d)
+
+var word24 : string
+var new_word23 : string := ""
+var number17 : int
+put "Please enter a word: " ..
+get word24
+for t : 1 .. length (word24)
+    if word24 (t) >= "a" and word24 (t) <= "z" then
+        number17 := ord (word24 (t)) - ord ("a") + ord ("A")
+        new_word23 += chr (number17)
+    else
+        new_word23 += word24 (t)
+    end if
+end for
+put "Capitalized this word is: ", new_word23, "."
+
+%3c)
+
+var word23 : string
+var number16 : int
+var new_word16 : string := ""
+put "Please enter a word. " ..
+get word23
+for x : 1 .. length (word23)
+    number16 := ord (word23 (x)) - 1
+    new_word16+=chr(number16)
+    end for
+    put new_word16, " is the new word."
+
+%3b)
+
+var word22 : string
+var new_word22 : string := ""
+var number15 : int
+put "Please enter a word: " ..
+get word22
+    for o : 1 .. length (word22)
+        if word22 (o) < "d" then
+            new_word22 +="%"
+        else
+            new_word22 += word22 (o)
+            end if
+        end for
+put "The new word is: ", new_word22, "."
+
+
+%3a)
+
+var word21 : string
+var new_word21 : string := ""
+var number14 : int
+put "Please enter a word: " ..
+get word21
+for n : 1 .. length (word21)
+    if word21 (n) = "r" then
+        number14 := ord (word21 (n)) - ord ("a") + ord ("A")
+        new_word21 += chr (number14)
+    else
+        new_word21 += word21 (n)
+    end if
+end for
+put "The new word is: ", new_word21, "."
+
+
+%3
+
+var word20 : string
+var new_word20 : string := ""
+put "Please enter a word: " ..
+get word20
+for k : 1 .. length (word20)
+    if index ("aeiouAEIOU", word20 (k)) not= 0 then
+        new_word20 += word20 (k)
+    else
+        new_word20 += "%"
+    end if
+end for
+put "The new word is: ", new_word20, "."
+
+%2c) - unfinished
+
+%2b)
+
+var word18 : string
+var remove_letter2 : string
+var new_word18 : string := ""
+put "Please enter a word that you wish to remove letter(s) from: " ..
+get word18
+loop
+    put "Please enter a letter(s) you wish to remove from the word, enter exit when you're done removing letters."
+    get remove_letter2
+    exit when remove_letter2 = "exit"
+    for f : 1 .. length (word18)
+    if index (remove_letter2, word18 (f))= 0 then
+        new_word18 += word18 (f)
+        end if
+    end for
+    put "The new word is: ", new_word18, "."
+    word18 := new_word18
+    new_word18 := ""
+end loop
+
+
+%2a)
+
+var word17 : string
+var remove_letter1 : string
+var new_word17 : string := ""
+put "Please enter a letter(s) you wish to remove from the words"
+get remove_letter1 
+loop
+    put "Please enter a word, enter exit when finished."
+    get word17
+    for e : 1 .. length (word17)
+    if index (remove_letter1, word17 (e))= 0 then
+        new_word17 += word17 (e)
+        end if
+    end for
+    put "The new word is: ", new_word17, "."
+    new_word17 := ""
+end loop
+
+
+%2
+
+var word16 : string
+var remove_letter : string
+var new_word16 : string := ""
+put "Please enter a word: " ..
+get word16
+put "Please enter a letter(s) you wish to remove from the word"
+get remove_letter
+for d : 1 .. length (word16)
+    if index (remove_letter, word16 (d))= 0 then
+        new_word16 += word16 (d)
+    end if
+end for
+put "The new word is: ", new_word16, "."
+
+
+%g) first word that contains two vowels
+
+var word15 : string
+var first_word : string := ""
+var number_of_vowels : string := ""
+var order3 : int := 0
+loop
+    put "Please enter a word, enter exit when finished: " ..
+    get word15
+    exit when word15 = "exit"
+    for i : 1 .. length (word15)
+        if index ("aeiouAEIOU", word15 (i)) not= 0 then
+            number_of_vowels += word15 (i)
+        end if
+        if length (number_of_vowels) = 2 then
+            order3 += 1
+        end if
+        if order3 = 1 then
+            first_word := word15
+        end if
+    end for
+end loop
+put "The first word that contains two vowels is: ", first_word, "."
+
+
+%g) longest word that contains an "s"
+
+var word14 : string
+var longest_word : string := ""
+var number13 : int
+var c : int := 0
+loop
+    put "Please enter a word, enter exit when finished: " ..
+    get word14
+    exit when word14 = "exit"
+    for i : 1 .. length (word14)
+        if word14 (i) = "s" and length (word14) > c then
+            c := length (word14)
+            longest_word := word14
+        end if
+    end for
+end loop
+put "The longest word that contains the letter s is: ", longest_word, "."
+
+
+%f)
+
+var word13 : string
+var length_of_words : int := 0
+var number_of_words : int := 0
+loop
+    put "Please enter a word, enter exit when finished: " ..
+    get word13
+    exit when word13 = "exit"
+    length_of_words += length (word13)
+    number_of_words += 1
+end loop
+put "The average length of these words are: ", length_of_words / number_of_words : 0 : 2, "."
+
+
+%e)
+
+var word12 : string
+var number12 : int
+var new_word12 : string := ""
+var b : int := 2
+loop
+    put "Please enter a word, enter exit when finished: " ..
+    get word12
+    exit when word12 = "exit"
+    if length (word12) < b then
+        b := length (word12)
+        new_word12 := word12
+    end if
+end loop
+put "The longest aord is: ", new_word12, "."
+
+
+%d)
+
+var word11 : string
+var number11 : int
+var new_word11 : string := ""
+var a : int := 0
+loop
+    put "Please enter a word, enter exit when finished: " ..
+    get word11
+    exit when word11 = "exit"
+    if length (word11) > a then
+        a := length (word11)
+        new_word11 := word11
+    end if
+end loop
+put "The longest word is: ", new_word11, "."
+
+
+%1b
+
+var word10 : string
+var number10 : int
+var new_word10 : string := ""
+var order2 : char := "z"
+loop
+    put "Please enter a word, enter exit when finished: " ..
+    get word10
+    exit when word10 = "exit"
+    if length (word10) = 7 and word10 (1) <= order2 then
+        order2 := word10 (1)
+        new_word10 := word10
+    end if
+end loop
+put "The 7 letter word that is alphabetically last is: ", new_word10, "."
+
+
+%1a
+
+var word9 : string
+var number9 : int
+var new_word9 : string := ""
+var order1 : char := "a"
+loop
+    put "Please enter a word, enter exit when finished : " ..
+    get word9
+    exit when word9 = "exit"
+    if word9 (1) >= order1 then
+        order1 := word9 (1)
+        new_word9 := word9
+    end if
+end loop
+put "The word that is alphabetically last is: ", new_word9, "."
+
+
+%1
+
+var word8 : string
+var number8 : int
+var new_word8 : string := ""
+var order : char := "z"
+loop
+    put "Please enter a word, enter exit when finished : " ..
+    get word8
+    exit when word8 = "exit"
+    if word8 (1) <= order then
+        order := word8 (1)
+        new_word8 := word8
+    end if
+end loop
+put "The word that is alphabetically first is: ", new_word8, "."
