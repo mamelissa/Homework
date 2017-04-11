@@ -1,0 +1,59 @@
+%1
+function subtract5(number : real) : real
+var number_subract5: real
+number_subract5 := number - 5
+result number_subract5
+end subtract5
+
+var user_input: real
+put "Please enter a number: " ..
+get user_input
+put "The number subtract 5 is ", subtract5(user_input), "."
+
+
+%2
+function factorial(number : int) : int
+var number_factorial: int := 1
+for i: 1.. number
+number_factorial * = i
+end for
+result number_factorial
+end factorial 
+
+var user_input: string
+put "Enter a negative integer when you are done."
+loop
+put "Please enter a integer: " ..
+get user_input 
+exit when user_input < "0" or strint (user_input) >0 and strint (user_input) < 13
+put "You did not enter an integer."
+end loop
+put "The factorial of ", user_input, "! is ", factorial(strint(user_input)), "."
+
+
+%3
+function reverse(word : string) : string
+var new_word : string := ""
+for decreasing i: length (word) ..1
+new_word += word (i)
+end for
+result new_word
+end reverse
+
+var user_input : string
+put "Please enter a word: " ..
+get user_input 
+put "The word in reverse is ", reverse(user_input), "."
+
+%3a
+function reverse(word : string) : string
+var new_word : string := ""
+for decreasing i: length (word) ..1
+new_word += word (i)
+end for
+result new_word
+end reverse
+
+var user_input : string
+put "The reverse order of the word dog is ", reverse("dog"), "."
+put "The reverse order of the word hello is ", reverse("hello"), "."
