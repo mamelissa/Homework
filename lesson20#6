@@ -1,7 +1,0 @@
-var temp : real
-loop
-    put "Please enter a temperature."
-    get temp
-    exit when temp > 30
-end loop
-put "Wow, that's hot."
