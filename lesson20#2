@@ -1,8 +1,0 @@
-var x, n : int
-var sum : int := 0
-    put "Enter 2 integers."
-    get x, n
-    for i : 0 .. n
-        sum += x ** i
-    end for
-put sum
