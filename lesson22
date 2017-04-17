@@ -1,0 +1,159 @@
+%7
+var weight1 : real
+var weight2 : real
+var weight3 : real
+put "Please enter the weight of the first bowl."
+get weight1
+put "Please enter the weight of the second bowl."
+get weight2
+put "Please enter the weight of the third bowl."
+get weight3
+if weight1 > weight2 and weight1 < weight3 then
+    put weight1, " is mama bear's bowl."
+elsif weight1 > weight3 and weight1 < weight2 then
+    put weight1, " is mama bear's bowl."
+elsif weight2 > weight1 and weight2 < weight3 then
+    put weight2, " is mama bear's bowl."
+elsif weight2 > weight3 and weight2 < weight1 then
+    put weight2, " is mama bear's bowl."
+elsif weight3 > weight2 and weight3 < weight1 then
+    put weight3, " is mama bear's bowl."
+elsif weight3 > weight1 and weight3 < weight2 then
+    put weight3, " is mama bear's bowl."
+end if
+
+
+%6
+var speedlimit : real
+var carspeed : real
+put "Enter 0 when you are finished using the program."
+loop
+    put "Please enter the speed limit.(km/h)"
+    get speedlimit
+    exit when speedlimit = 0
+    put "Please enter the recorded speed of the car."
+    get carspeed
+    if carspeed <= speedlimit then
+        put "Congratulations, you are within the speed limit!"
+    elsif speedlimit - carspeed < 0 and speedlimit - carspeed >= -20 then
+        put "You are speeding and your fine is $100."
+    elsif speedlimit - carspeed < -20 and speedlimit - carspeed >= -30 then
+        put "You are speeding and your fine is $200."
+    elsif speedlimit - carspeed < -31 then
+        put "You are speeding and your fine is $500."
+    end if
+end loop
+
+
+
+%5
+var angle1, angle2, angle3 : real
+put "Please enter an angle of the triangle. " ..
+get angle1
+loop
+    if angle1 < 0 or angle1 > 180 then
+        put "Sorry, try again! (Angle has to be between 0 and 180)."
+        get angle1
+    end if
+    exit when angle1 > 0 and angle1 < 180
+end loop
+put "Please enter another angle of the triangle. " ..
+get angle2
+loop
+    if angle2 < 0 or angle2 > 180 or angle1 + angle2 >= 180 then
+        put "Error! Try again."
+        get angle2
+    end if
+    exit when angle2 > 0 and angle2 < 180
+end loop
+put "Please enter another angle of the triangle. " ..
+get angle3
+loop
+    if angle3 < 0 or angle3 > 180 or angle1 + angle2 + angle3 not= 180 then
+        put "Sorry, try again! (Angle has to be between 0 and 180)."
+        get angle3
+    end if
+    exit when angle3 > 0 and angle3 < 180
+end loop
+if angle1 = 60 and angle2 = 60 and angle3 = 60 then
+    put "That is an equilateral trianlge."
+elsif angle1 = angle2 or angle2 = angle3 or angle3 = angle1 then
+    put "That is an isoceles triangle."
+else
+    put "That is a scalene triangle."
+end if
+
+
+%4
+var integer : real
+var numberm : int := 0
+loop
+    put "Please enter an integer."
+    get integer
+    if integer mod 1 not= 0 then
+        put "Try again!"
+    else
+        for i : 1 .. 10
+            put integer, " * ", i : 2, " = ", integer * i
+        end for
+    end if
+end loop
+
+%3
+var weight : real
+var height : real
+var option : string
+var cm : real
+var inches : real
+const CONVERT := 2.5
+const METERS := 100
+const FEETS := 0.083
+var feet : real
+var meter : real
+var remainder1 : real
+var remainder2 : real
+put "Please enter a height."
+get height
+put "Is it in inches or cm? (Enter inches or cm.)"
+get option
+if option = "cm" then
+    meter := height / METERS
+    remainder1 := (meter - height * METERS) / METERS
+    put option, "inches is ", meter, "m in meters"
+    put "And ", remainder1, "cm."
+elsif option = "inches" then
+    feet := height * FEETS
+    remainder2 := (feet - height / FEETS) * FEETS
+    put option, "inches is ", feet, "ft in feet"
+    put "And ", remainder2, "inches."
+end if
+
+
+%2
+var number1 : int := 0
+var total : real := 0
+loop
+    put "Put the weight to the package, enter 0 to exit the program."
+    get weight
+    exit when weight = 0
+    if weight > 0 then
+        total += weight
+        number1 += 1
+    else
+        put "Error!"
+    end if
+end loop
+put "The average of these packages are ", total / number1, "."
+
+
+%1
+var number : int
+put "Enter a number please."
+get number
+for i : 1 .. number
+    if i = number then
+        put " "
+    elsif i mod 4 = 0 then
+        put i, ", " ..
+    end if
+end for
