@@ -1,0 +1,57 @@
+%1
+function meters (length1 : real) : real
+    var length_in_meters : real
+    length_in_meters := length1 / 100
+    result length_in_meters
+end meters
+
+var length2 : int
+put "Please enter a length (cm)"
+get length2
+put "The length in meters is ", meters (length2), "."
+
+%2
+function area (base : real, height : real) : real
+    var trianglearea : real
+    trianglearea := (base * height) / 2
+    result trianglearea
+end area
+put "The area is ", area (2, 12), "."
+
+%3
+function findy (inputm : real, inputx : real, inputb : real) : real
+    var resulty : real
+    resulty := inputm * inputx + inputb
+    result resulty
+end findy
+
+var inputm1, inputb1, inputx1 : real
+put "Please provide the value of the slope. " ..
+get inputm1
+put "Please provide the value of the y-intercept. " ..
+get inputb1
+put "Enter 100000 when finished."
+loop
+    put "Please enter the value of x. " ..
+    get inputx1
+    exit when inputx1 = 0.0001
+    put "The value of y is ", findy (inputm1, inputx1, inputb1), "."
+end loop
+
+%4
+function isvowel (word : string) : string
+    var newcharacter : string := ""
+    for i : 1 .. length (word)
+        if index ("aeiouAEIOU", word (i)) not= 0 then
+            newcharacter += "*"
+        else
+            newcharacter += word (i)
+        end if
+    end for
+    result newcharacter
+end isvowel
+
+var word1 : string
+put "Please enter a word: " ..
+get word1
+put "The new word is ", isvowel (word1), "."
