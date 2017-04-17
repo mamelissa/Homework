@@ -1,0 +1,111 @@
+%1
+function starts (word : string) : boolean
+    for i : 1 .. length (word)
+        if word (1) = "s" or word (1) = "S" then
+            result true
+        else
+            result false
+        end if
+    end for
+end starts
+
+var word : string
+put "Please enter a word: " ..
+get word
+if starts (word) then
+    put "Your word starts with an s!"
+else
+    put "Your word does not start with an s!"
+end if
+
+
+%2
+function mutiple (integer : int) : boolean
+    if integer mod 7 = 0 then
+        result true
+    else
+        result false
+    end if
+end mutiple
+
+var input_int : int
+input_int := 49
+if mutiple (input_int) then
+    put "This integer is a mutiple of 7."
+else
+    put "This integer is not a mutiple of 7."
+end if
+
+
+%3
+var new_word : string := ""
+function reverse (word : string) : string
+    for decreasing i : length (word) .. 1
+        new_word += word (i)
+    end for
+    result new_word
+end reverse
+
+function isapalindrome (word : string) : boolean
+    if reverse (word) = word then
+        result true
+    else
+        result false
+    end if
+end isapalindrome
+
+
+var word : string
+put "Please enter a word: " ..
+get word
+if isapalindrome (word) then
+    put "Your word is a palindrome!"
+else
+    put "Your word is not a palindrome."
+end if
+
+
+%4
+function double (number : int) : int
+    var newnum : int
+
+    newnum := number * 2
+    result newnum
+end double
+
+var number1 : int
+put "Please enter a number: " ..
+get number1
+loop
+    put "This number doubled is ", double (number1), "."
+    exit when number1 >= 1000000
+    number1 := double (number1)
+end loop
+
+
+%5
+function reverse (word2 : string) : string
+    var new_word : string := ""
+    for decreasing i : length (word2) .. 1
+        new_word += word2 (i)
+    end for
+    result new_word
+end reverse
+
+function glue (word : string, word1 : string, word2 : string) : string
+    var glueword : string := ""
+    glueword += word
+    glueword += word1
+    glueword += reverse (word2)
+    result glueword
+end glue
+
+var word4, word5, word6 : string
+put "Please enter a word " ..
+get word4
+put "Please enter a word " ..
+get word5
+put "Please enter a word " ..
+get word6
+
+put glue (word4, word5, word6)
