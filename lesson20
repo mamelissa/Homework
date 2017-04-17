@@ -1,0 +1,173 @@
+%10
+var year : int := 0
+var a : real := 50000000
+var b : real := 70000000
+const GROWTH := 0.03
+const GROWTH2 := 0.02
+loop
+    a += a * GROWTH
+    b += b * GROWTH2
+    year += 1
+    exit when a >= b
+end loop
+put "In ", year, " years country A's population will surpass country B."
+
+
+%9
+var inte1, inte2 : int
+var total : int := 0
+loop
+    put "Please enter 2 postive integers, the first lower than the second."
+    get inte1, inte2
+    exit when inte1 < inte2
+    put "Error!"
+end loop
+put "The sum of " ..
+for sum : inte1 .. inte2
+    if sum = inte2 then
+        put sum, "" ..
+    else
+        put sum, " + " ..
+    end if
+    total += sum
+end for
+put " = ", total
+
+
+%8
+var u : real := 300
+var m : real := 280
+var years : int := 0
+const INTREST_J := 0.0125
+const INTREST_M := 0.02
+loop
+    u += u * INTREST_J
+    m += m * INTREST_M
+    years += 1
+    exit when u >= u
+end loop
+put years, " years before Max has more money than Julia."
+
+
+%7
+var num1, num2 : int
+loop
+    put "Enter 2 numbers."
+    get num1, num2
+    exit when num1 = 0 and num2 = 0
+    put (num1 + num2) / 2
+end loop
+
+
+%6
+var temp : real
+loop
+    put "Please enter a temperature."
+    get temp
+    exit when temp > 30
+end loop
+put "Wow, that's hot."
+
+
+
+%5
+var mark : real
+var total : int := 0
+put "Please enter 10 marks."
+for i : 1 .. 10
+    get mark
+    if mark >= 70 then
+        total += 1
+    end if
+end for
+put total, " marks are at least 70%."
+
+
+%4d
+var lowest, highest : int
+put "Enter the smallest number you wish to cube."
+get lowest
+put "Enter the largest number you wish to cube."
+get highest
+for q : lowest .. highest
+    if q = highest then
+        put q ** 3, ". "
+    else
+        put q ** 3, ", " ..
+    end if
+end for
+
+
+%4c
+var yournum : int
+put "Enter the largest number you wish to cube."
+get yournum
+for q : 1 .. yournum
+    if q = yournum then
+        put q ** 3, ". "
+    else
+        put q ** 3, ", " ..
+    end if
+end for
+
+
+%4b
+var s : int := 0
+for q : 1 .. 8
+    s += q ** 3
+end for
+put s
+
+
+%4a
+for q : 1 .. 8
+    if q = 8 then
+        put q ** 3, ". "
+    else
+        put q ** 3, ", " ..
+    end if
+end for
+
+
+
+%3
+var number : int
+put "Enter a number."
+get number
+for i : 1 .. number
+    if i = number then
+        put i, ". "
+    elsif number mod i = 0 then
+        put i, ", " ..
+    end if
+end for
+
+
+
+
+%2
+var x, n : int
+var sum : int := 0
+put "Enter 2 integers."
+get x, n
+for i : 0 .. n
+    sum += x ** i
+end for
+put sum
+
+
+
+
+%1
+var number1, number2 : int
+put "Enter 2 even numbers."
+get number1, number2
+if number1 > number2 then
+    for decreasing j : number1 .. number2 by 2
+        put j, ", " ..
+    end for
+else
+    for i : number1 .. number2 by 2
+        put i, ", " ..
+    end for
+end if
