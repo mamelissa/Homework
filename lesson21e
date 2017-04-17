@@ -1,9 +1,0 @@
-for row : 1 .. 4
-    for i : 1 .. 4 - row
-        put " " ..
-    end for
-    for i : 1 .. 2 * row - 1
-        put "$" ..
-    end for
-    put ""
-end for
