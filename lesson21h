@@ -1,6 +1,0 @@
-for row : 1 .. 9
-    for i : row .. row * 9 by row
-        put i, " " ..
-    end for
-    put " "
-end for
