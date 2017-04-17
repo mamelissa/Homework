@@ -1,0 +1,91 @@
+%h
+for row : 1 .. 9
+    for i : row .. row * 9 by row
+        put i, " " ..
+    end for
+    put " "
+end for
+
+
+%f
+for row : 1 .. 5
+    for i : 1 .. 5 - row
+        put " " ..
+    end for
+    for i : 1 .. row
+        put i ..
+    end for
+    for decreasing i : row - 1 .. 1
+        put i ..
+    end for
+    put " "
+end for
+
+
+
+%f
+for row : 1 .. 5
+    for i : 1 .. 5 - row
+        put " " ..
+    end for
+    for j : 1 .. row
+        put row ..
+    end for
+    put " "
+end for
+
+
+%e
+for row : 1 .. 4
+    for i : 1 .. 4 - row
+        put " " ..
+    end for
+    for i : 1 .. 2 * row - 1
+        put "$" ..
+    end for
+    put ""
+end for
+
+
+%d
+var number_of_rows : int
+put "How many rows of stars do you want there to be? " ..
+get number_of_rows
+for i : 1 .. number_of_rows
+    put "*" : 2 ..
+    for row : 1 .. 9
+        put "*" : 2 ..
+    end for
+    put ""
+end for
+
+
+%c
+for i : 1 .. 8
+    put "*" : 2 ..
+    for row : 1 .. 9
+        put "*" : 2 ..
+    end for
+    put ""
+end for
+
+
+%b
+const NUMBER := 10
+for decreasing row : NUMBER .. 1 by 2
+    for i : 1 .. row
+        put "*" ..
+    end for
+    put ""
+end for
+
+
+
+%a
+const NUMBER_OF_ROWS := 5
+for decreasing row : NUMBER_OF_ROWS .. 1
+    for i : 1 .. row
+        put "*" ..
+    end for
+    put ""
+end for
