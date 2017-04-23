@@ -1,0 +1,83 @@
+%1
+import GUI
+
+var textfield, textfield2 : int
+var convert : int
+var quitbutton : int
+
+procedure echotext (fieldcontent : string)
+    var number : real := strreal (fieldcontent) / 2.54
+    var conversion : string
+    conversion := fieldcontent + " cm = " + realstr (number, 2) + " in"
+    GUI.SetText (textfield2, conversion)
+end echotext
+
+procedure setText (fieldContent : string)
+    var number : real := strreal (fieldContent) * 2.54
+    var conversion : string
+    conversion := fieldContent + " in = " + realstr (number, 2) + " cm"
+    GUI.SetText (textfield, conversion)
+end setText
+
+
+textfield := GUI.CreateTextField (10, 30, 50, "", echotext)
+var textfieldLabel : int := GUI.CreateLabel (10, 31 + GUI.GetHeight (textfield), "centimeters")
+textfield2 := GUI.CreateTextField (450, 35, 150, "", setText)
+quitbutton := GUI.CreateButton (300, 30, 80, "Quit", GUI.Quit)
+
+loop
+    exit when GUI.ProcessEvent
+end loop
+
+%2
+import GUI
+
+var quitButton : int := GUI.CreateButton (300, 30, 80, "Quit", GUI.Quit)
+var textField, textField2 : int
+
+procedure remove_vowels (word : string)
+    var new_word : string := ""
+    for i : 1 .. length (word)
+        if index ("aeiouAEIOU", word (i)) = 0 then
+            new_word += word (i)
+        end if
+    end for
+    GUI.SetText (textField2, new_word)
+end remove_vowels
+
+procedure remove_vowels2 (word : string)
+    var new_word : string := ""
+    for i : 1 .. length (word)
+        if index ("aeiouAEIOU", word (i)) = 0 then
+            new_word += word (i)
+        end if
+    end for
+    GUI.SetText (textField, new_word)
+end remove_vowels2
+
+textField := GUI.CreateTextField (10, 35, 100, "", remove_vowels)
+textField2 := GUI.CreateTextField (450, 35, 100, "", remove_vowels2)
+
+loop
+    exit when GUI.ProcessEvent
+end loop
+
+%3
+import GUI
+
+var textField : int
+var quitbutton : int
+
+procedure echotextfield (textfieldcontents : string)
+    var new_num : int
+    new_num := strint (textfieldcontents) + 1
+    GUI.SetText (textField, intstr (new_num))
+end echotextfield
+
+textField := GUI.CreateTextField (100, 30, 100, "", echotextfield)
+var textfieldLabel : int := GUI.CreateLabel (10, 31 + GUI.GetHeight (textField), "Enter a number")
+quitbutton := GUI.CreateButton (300, 30, 80, "Quit", GUI.Quit)
+
+loop
+    exit when GUI.ProcessEvent
+end loop
