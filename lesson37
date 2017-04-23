@@ -1,0 +1,31 @@
+%1
+import GUI
+
+procedure HelloThere
+put "Hello There"
+end HelloThere
+
+var HelloThereButton : int
+
+HelloThereButton := GUI.CreateButton (100, 200, 80, "Hello There", HelloThere)
+
+loop 
+    exit when GUI.ProcessEvent
+end loop
+
+%2
+import GUI
+
+procedure HelloThere
+put "Hello There"
+end HelloThere
+
+var HelloThereButton : int
+
+HelloThereButton := GUI.CreateButton (100, 50, 80, "Hello There", HelloThere)
+
+var quitButton : int := GUI.CreateButton (200,50, 80, "Quit", GUI.Quit)
+
+loop 
+    exit when GUI.ProcessEvent
+end loop
