@@ -1,0 +1,108 @@
+%1
+procedure output (lines : int)
+    for decreasing i : lines .. 1
+        put repeat ("%", i) ..
+        put repeat ("&", i) ..
+        put ""
+    end for
+end output
+
+output (5)
+
+%3
+procedure stars (lines : int)
+    for decreasing i : lines .. 1
+        for n : 0 .. n - 1
+            put "*"
+            put ""
+        end for
+        put " "
+    end for
+end stars
+
+stars (6)
+
+%4
+var area : real := 0
+function areaofcir (radius : real) : real
+    area := 3.14 * radius ** 2
+    result area
+end areaofcir
+
+var perimeter : real := 0
+function perimeterofrec (height : real, length1 : real) : real
+    perimeter := 2 * (height) + 2 * (length1)
+    result perimeter
+end perimeterofrec
+
+var area2 : real := 0
+function areatri (base : real, height : real) : real
+    area2 := (base * height) / 2
+    result area2
+end areatri
+
+var user_shape : string
+var length1, radius, width, base, height : real
+put "What shape would you like?(Circle, Rectangle or Triangle): " ..
+get user_shape
+case user_shape of
+    label "Circle" :
+        put "Please enter radius"
+        get radius
+        put "The area of the circle is ", areaofcir (radius), "."
+    label "Rectangle" :
+        put "Please enter the width: " ..
+        get width
+        put "Please enter the length: " ..
+        get length1
+        put "The perimeter of the rectangle is ", perimeterofrec (width, length1), "."
+    label "Triangle" :
+        put "Please enter the base measurement: " ..
+        get base
+        put "Please enter the height measurement: " ..
+        get height
+        put "The area of the triangle is ", areatri (base, height), "."
+end case
+
+%5
+function isarmstrong (number : int) : boolean
+    var sumofcubes : int := 0
+    for n : 1 .. length (intstr (number))
+        sumofcubes += (strint (intstr (number) (n))) ** 3
+    end for
+    if sumofcubes = number then
+        result true
+    else
+        result false
+    end if
+end isarmstrong
+
+for i : 0 .. 10000
+    if isarmstrong (i) then
+        put i
+    end if
+end for
+
+%6
+function reverse (num : string) : string
+    var new_word : string := ""
+    for decreasing i : length (num) .. 1
+        new_word += num (i)
+    end for
+    result new_word
+end reverse
+
+function ispalindrome (number : int) : boolean
+    const STRING := intstr (number)
+    if STRING (1 .. *) = reverse (STRING) then
+        result true
+    else
+        result false
+    end if
+end ispalindrome
+
+for i : 0 .. 10000
+    if ispalindrome (i) then
+        put i
+    end if
+end for
