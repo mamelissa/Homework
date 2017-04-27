@@ -1,0 +1,41 @@
+setscreen ("graphics")
+
+% face
+drawfilloval(200, 280, 50, 50, black)
+drawfilloval(200, 280, 45, 45, white)
+
+% eye
+drawfilloval(220, 290, 4, 4, black)
+
+% nose
+drawline(250, 280, 255, 285, black)
+drawline(255, 285, 250, 290, black)
+
+% mouth
+drawfilloval(230, 260, 6, 6, black)
+
+% ear
+drawarc (170, 270, 5, 15, 30, 210,black)
+
+% eyebrows
+drawfillarc (210, 300, 15, 5, 350, 180, black)
+
+% hair
+drawfillarc (210, 325, 12, 30, 360, 170, red)
+
+% body
+drawline (200, 150, 200, 230, black)
+
+% arms
+drawline (200, 215, 180, 165, black)
+drawline (200, 215, 205, 150, black)
+drawline (180, 165, 200, 160, black)
+
+% legs
+drawline (200, 150, 180, 70, black)
+drawline (200, 150, 220, 70, black)
+
+% music note
+drawline (300, 310, 303, 340, black)
+drawline (303, 340, 313, 340, black)
+drawfilloval (296, 310, 5, 2, black)
