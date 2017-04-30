@@ -1,0 +1,39 @@
+import GUI
+
+View.Set ("graphics: 300,130")
+Window.Set (defWinId, "title: Tempeature Converter")
+GUI.SetBackgroundColour (gray)
+
+var ctof, ftoc, celsius, fahrenheit : real
+var textfield, textfield2, celsiusbutton, fahbutton, textfieldlabel, textfieldlabel2, quitButton : int
+
+procedure dummy (Fieldcontent : string)
+end dummy
+
+procedure dummy2 (Fieldcontnet : string)
+end dummy2
+
+procedure convertf
+    celsius := strreal (GUI.GetText (textfield))
+    ctof := celsius * 1.8 + 32
+    GUI.SetText (textfield2, realstr (ctof, 0))
+end convertf
+
+procedure convertc
+    fahrenheit := strreal (GUI.GetText (textfield2))
+    ftoc := (fahrenheit - 32) * 0.6
+    GUI.SetText (textfield, realstr (ftoc, 0))
+end convertc
+
+textfield := GUI.CreateTextField (10, 30, 80, "", dummy)
+textfield2 := GUI.CreateTextField (210, 30, 80, "", dummy2)
+celsiusbutton := GUI.CreateButton (100, 50, 80, "<- Convert", convertc)
+fahbutton := GUI.CreateButton (100, 25, 80, "Convert ->", convertf)
+textfieldlabel := GUI.CreateLabel (10, 30 + GUI.GetHeight (textfield), "Celsius")
+textfieldlabel2 := GUI.CreateLabel (210, 30 + GUI.GetHeight (textfield2), "Fahrenheit")
+quitButton := GUI.CreateButton (100, 100, 80, "Quit", GUI.Quit)
+
+loop
+    exit when GUI.ProcessEvent
+end loop
+
