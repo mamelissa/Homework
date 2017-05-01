@@ -1,0 +1,49 @@
+%2
+var x, y, buttonupdown, buttonnumber : int
+var Visible : boolean := true
+
+put "Click anywhere on screen"
+loop
+    Mouse.ButtonWait ("down", x, y, buttonnumber, buttonupdown)
+    if Visible then
+        drawfilloval (maxx div 2, maxy div 2, 10, 10, black)
+        Visible := false
+    else
+        cls
+        put "Click anywhere on screen"
+        Visible := true
+    end if
+end loop
+
+
+%3
+var x, y, button, buttonnumber : int
+var x, y, button, btnumber : int
+var randcol : int
+var figure : boolean := true
+
+loop
+    Mouse.ButtonWait ("down", x, y, btnumber, button)
+    if figure then
+        drawfilloval (maxx div 2, maxy div 2, 100, 100, black)
+        figure := false
+    else
+        randint (randcol, 100, 255)
+        drawfilloval (maxx div 2, maxy div 2, 100, 100, randcol)
+    end if
+end loop
+
+%4
+var x, y, button, btnnumber : int
+var pressed : boolean := true
+
+loop
+    Mouse.ButtonWait ("down", x, y, btnnumber, button)
+    if pressed then
+        drawfilloval (x, y, 10, 10, blue)
+        pressed := false
+    else
+        drawfillbox (x, x, y, y, black)
+        pressed := true
+    end if
+end loop
