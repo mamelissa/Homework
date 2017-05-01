@@ -1,0 +1,73 @@
+import GUI
+
+var guessbutton, growbutton, quitbutton, backbutton, clickme, height, width : int
+const BUTTON_WIDTH := 70
+const BUTTON_HEIGHT := 75
+
+procedure home
+    height := BUTTON_HEIGHT
+    width := BUTTON_WIDTH
+    GUI.SetSize (clickme, width, height)
+    GUI.Show (guessbutton)
+    GUI.Show (growbutton)
+    GUI.Show (quitbutton)
+    GUI.Hide (backbutton)
+    GUI.Hide (clickme)
+    cls
+    GUI.Refresh
+end home
+
+procedure guessinggame
+    var guess, hidden : int
+
+    GUI.Hide (guessbutton)
+    GUI.Hide (growbutton)
+    GUI.Hide (clickme)
+    GUI.Show (quitbutton)
+    GUI.Show (backbutton)
+    cls
+    GUI.Refresh
+
+    randint (hidden, 1, 100)
+    put "Guess the number between 1 and 100"
+    loop
+        put "Guess: " ..
+        get guess
+        cls
+        GUI.Refresh
+        exit when guess = hidden
+        if guess > hidden then
+            put "Lower"
+        else
+            put "Higher"
+        end if
+    end loop
+    put "You got it!"
+end guessinggame
+
+procedure growinggame
+    GUI.Hide (guessbutton)
+    GUI.Hide (growbutton)
+    GUI.Show (clickme)
+    GUI.Show (backbutton)
+end growinggame
+
+procedure growthebutton
+    height += 10
+    width += 10
+    GUI.SetSize (clickme, height, width)
+end growthebutton
+
+guessbutton := GUI.CreateButton (100, 10, 50, "Guessing game", guessinggame)
+growbutton := GUI.CreateButton (260, 10, 50, "Growing button", growinggame)
+quitbutton := GUI.CreateButton (10, 35, 80, "Quit", GUI.Quit)
+backbutton := GUI.CreateButton (10, 10, 50, "Back", home)
+clickme := GUI.CreateButton (200, 40, 40, "Click me!", growthebutton)
+
+View.Set ("graphics:600;400")
+home
+
+loop
+    exit when GUI.ProcessEvent
+end loop
+
