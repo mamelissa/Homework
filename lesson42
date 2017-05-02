@@ -47,3 +47,29 @@ loop
         pressed := true
     end if
 end loop
+
+%5
+var x, y, button, btnumber : int
+var newx, newy : int
+var randcol : int
+var pressed : boolean := true
+
+loop
+    Mouse.ButtonWait ("down", x, y, btnumber, button)
+    if pressed then
+        newx := x
+        newy := y
+        randint (randcol, 0, 255)
+        drawfilloval (x, y, 50, 50, randcol)
+        pressed := false
+    elsif sqrt (((newx - x) ** 2 + (newy - y) ** 2)) > 50 then
+        randint (randcol, 1, 255)
+        drawfilloval (x, y, 50, 50, randcol)
+        newx := x
+        newy := y
+    else
+        randint (randcol, 0, 255)
+        drawfilloval (newx, newy, 50, 50, randcol)
+
+    end if
+end loop
