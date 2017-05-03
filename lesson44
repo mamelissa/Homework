@@ -1,0 +1,60 @@
+%1
+View.Set ("graphics: 600; 500")
+
+var x, y, x1, y1, button : int
+
+loop
+    Mouse.Where (x, y, button)
+    Text.Locate (1, 1)
+    x1 := x
+    y1 := y
+    drawfilloval (x1, y1, 5, 8, blue)
+end loop
+
+%2
+View.Set ("graphics: 600; 500")
+
+var x, y, x1, y1, button : int
+
+loop
+    if Mouse.ButtonMoved ("downup") then
+        Mouse.Where (x, y, button)
+        x1 := x
+        y1 := y
+        drawfilloval (x1, y1, 5, 8, blue)
+    end if
+end loop
+
+%3
+View.Set ("graphics: 600; 500")
+
+var x, y, x1, y1, button : int
+
+loop
+    if Mouse.ButtonMoved ("down") then
+        Mouse.Where (x, y, button)
+        x1 := x
+        y1 := y
+        drawfilloval (x1, y1, 5, 8, blue)
+    end if
+    exit when Mouse.ButtonMoved ("up")
+end loop
+
+%4
+View.Set ("graphics : 600; 500")
+
+var x, y, x1, y1, button, bntnumber, bntupdown : int
+
+loop
+    Mouse.ButtonWait ("up", x, y, bntnumber, bntupdown)
+    loop
+        if Mouse.ButtonMoved ("down") then
+            Mouse.Where (x, y, button)
+            x1 := x
+            y1 := y
+            drawfilloval (x1, y1, 5, 8, blue)
+        end if
+        exit when Mouse.ButtonMoved ("up")
+    end loop
+end loop
+
