@@ -1,0 +1,86 @@
+%1
+import GUI
+
+var input, output : int
+var uppercase : int
+var number : int
+var quitButton : int
+var uppercaselabel : int
+var makeuppercasebtn : int
+
+procedure dummy (textcontent : string)
+    GUI.SetText (output, "")
+end dummy
+
+procedure makeuppercase (textcontent : string)
+    var newword : string := ""
+    for i : 1 .. length (textcontent)
+        if textcontent (i) >= "a" and textcontent (i) <= "z" then
+            number := ord (textcontent (i)) - ord ("a") + ord ("A")
+            newword += chr (number)
+        else
+            newword += textcontent (i)
+        end if
+    end for
+    GUI.SetText (output, newword)
+end makeuppercase
+
+procedure pressed
+    makeuppercase (GUI.GetText (input))
+end pressed
+
+input := GUI.CreateTextField (10, 30, 100, "", makeuppercase)
+output := GUI.CreateTextField (120, 30, 100, "", dummy)
+uppercaselabel := GUI.CreateLabel (10, 30 + GUI.GetHeight (input), "Input")
+makeuppercasebtn := GUI.CreateButton (230, 30, 100, "Make Uppercase", pressed)
+quitButton := GUI.CreateButton (350, 30, 80, "Quit", GUI.Quit)
+
+loop
+    exit when GUI.ProcessEvent
+end loop
+
+
+%2
+import GUI
+
+var button, button2, button3, quitbutton : int
+
+procedure home
+    var number : int
+    randint (number, 1, 3)
+    case number of
+        label 1 :
+            GUI.Show (button)
+            GUI.Show (button2)
+            GUI.Hide (button3)
+        label 2 :
+            GUI.Hide (button)
+            GUI.Show (button2)
+            GUI.Show (button3)
+        label 3 :
+            GUI.Show (button)
+            GUI.Hide (button2)
+            GUI.Show (button3)
+    end case
+end home
+
+procedure press1
+    home
+end press1
+
+procedure press2
+    home
+end press2
+
+procedure press3
+    home
+end press3
+
+button := GUI.CreateButton (10, 30, 100, "click me", home)
+button2 := GUI.CreateButton (20 + GUI.GetWidth (button), 30, 100, "click me", home)
+button3 := GUI.CreateButton (30 + GUI.GetWidth (button2) + GUI.GetWidth (button), 30, 100, "click me", home)
+quitbutton := GUI.CreateButton (10+GUI.GetWidth(button), 50 + GUI.GetHeight(button), 20, "QUIT", GUI.Quit)
+
+loop
+    exit when GUI.ProcessEvent
+end loop
