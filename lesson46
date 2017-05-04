@@ -1,0 +1,65 @@
+%a)
+var numbers: array 1..10 of real
+
+for i: 1..10
+    put "Please enter the daily high temperature: " ..
+    get numbers (i)
+end for
+
+put "The daily high temperatures for the past 10 days in reverse are: "
+    for decreasing i: 10..1
+    put numbers (i), " "
+end for
+
+%b)
+var numbers: array 1..10 of real
+var average: real
+const DAYS := 10
+
+for i: 1..10
+put "Please enter the daily high temperature: " ..
+get numbers (i)
+end for
+
+for k: 1..10
+average += numbers (k)
+
+put "The average temperature for the past 10 days is: ", average / DAYS
+
+%c) highest
+var numbers: array 1..10 of real
+var highesttemp: real
+var newhighest :real := -10000
+
+for i: 1..10
+    put "Please enter the daily high temperature: " ..
+    get numbers (i)
+end for
+
+for k: 1..10
+if numbers (k) > newhighest then
+highesttemp := numbers (k)
+newhighest := numbers (k)
+end if
+end for
+
+put "The highest temperature is: ", highesttemp
+
+%c) lowest
+var numbers: array 1..10 of real
+var lowesttemp: real
+var newlowest :real := 10000
+
+for i: 1..10
+    put "Please enter the daily high temperature: " ..
+    get numbers (i)
+end for
+
+for k: 1..10
+if numbers (k) < newlowest then
+lowesttemp := numbers (k)
+newlowest := numbers (k)
+end if
+end for
+
+put "The highest temperature is: ", lowesttemp
