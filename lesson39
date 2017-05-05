@@ -1,7 +1,7 @@
 import GUI
 
 View.Set ("graphics: 300,130")
-Window.Set (defWinId, "title: Tempeature Converter")
+Window.Set (defWinId, "title: Temperature Converter")
 GUI.SetBackgroundColour (gray)
 
 var ctof, ftoc, celsius, fahrenheit : real
@@ -10,7 +10,7 @@ var textfield, textfield2, celsiusbutton, fahbutton, textfieldlabel, textfieldla
 procedure dummy (Fieldcontent : string)
 end dummy
 
-procedure dummy2 (Fieldcontnet : string)
+procedure dummy2 (Fieldcontent : string)
 end dummy2
 
 procedure convertf
